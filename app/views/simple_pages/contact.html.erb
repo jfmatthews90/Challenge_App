@@ -1,6 +1,45 @@
-<p>Nav from layouts</p>
+<div class="contact">  
+	<div class="container">
+  	<h1 class="subpage-header">Contact me</h1>
+	
+	  <%= flash[:notice] %>
 
-<h1>Contact Page</h1>
-<p>Form here</p>
+	  <%= form_tag('/static_pages/thank_you') do %>
+	    <div class="contact-form">
+	      <div class="form-group">
+	        <%= label_tag :first_name %>
+	        <%= text_field_tag :name, nil, class: "form-control", placeholder: "Enter First Name", :required=> "required" %>
+	      </div> <!-- /form-group -->
 
-<p>Footer from layouts</p>
+	      <div class="form-group">
+	        <%= label_tag :last_name %>
+	        <%= text_field_tag :name, nil, class: "form-control", placeholder: "Enter Last Name", :required=> "required" %>
+	      </div> <!-- /form-group -->	      
+
+	      <div class="form-group">
+	        <%= label_tag :email, "Email Address" %>
+	        <%= text_field_tag :email, nil, class: "form-control", placeholder: "Enter Email", :required=> "required" %>
+	      </div> <!-- /form-group -->
+
+	      <div class="form-group">
+	        <%= label_tag :zip_code, "Zip Code" %>
+	        <%= text_field_tag :email, nil, class: "form-control", placeholder: "Zip Code", :required=> "required" %>
+	      </div> <!-- /form-group -->	      
+
+	      <div class="form-group">
+	        <%= label_tag :message %>
+	        <%= text_area_tag :message, nil, class: "form-control", placeholder: "Enter Message", :required=> "required" %>
+	      </div> <!-- /form-group -->
+
+				<!-- <div class="hidden">
+	  			<%= label_tag :nickname %><br />
+	  			<%= text_field_tag :nickname, hint: 'Leave this field blank', captcha: "true" %>
+	  		</div> -->
+
+	      <div class="send-button col-md-12 col-sm-2">
+	        <%= submit_tag "Send Message", class: "btn btn-info btn-lg btn-contact" %>
+	      </div> <!-- /send-button -->
+	    </div> <!-- /contact-form -->
+	  <% end %>
+	</div>
+</div>
